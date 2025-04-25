@@ -1,0 +1,68 @@
+-------------------------------------------
+Guide on how to merge Samsung Beta Firmware
+By @EndaDwagon | t.me/endarom
+-------------------------------------------
+
+
+Put all the files needed in the same folder as this
+Such as your super, and the dat files for the partitions you want to merge
+
+DOES NOT WORK ON WSL UNLESS YOU ARE USING AN EXT4 PARTITION
+
+------------------------------------------
+Desparsing and extracting your super image
+------------------------------------------
+If your super image is LZ4 Do the following commands
+sudo apt update && sudo apt upgrade && sudo apt install lz4
+lz4 super.img.lz4
+rm -rf super.img.lz4
+
+Now thats out the way, desparse your super image with the following command
+
+./imjtool super.img extract
+mv super.img super.img-old 2>/dev/null ; mv extracted/image.img super.img
+
+You can either extract each partition individually or extract the whole super
+
+Whole super
+./lpunpack super.img
+
+System partition
+./lpunpack --partition=system super.img .
+
+Odm partition
+./lpunpack --partition=odm super.img .
+
+Product partition
+./lpunpack --partition=product super.img .
+
+Vendor partition
+./lpunpack --partition=vendor super.img .
+
+System_ext partition (if it exists)
+./lpunpack --partition=system_ext super.img .
+
+
+--------------
+Actual merging
+--------------
+Usage:
+
+System
+./BlockImageUpdate system.img system.transfer.list system.new.dat system.patch.dat
+
+Product
+./BlockImageUpdate product.img product.transfer.list product.new.dat product.patch.dat
+
+Odm
+./BlockImageUpdate odm.img odm.transfer.list odm.new.dat odm.patch.dat
+
+Vendor
+./BlockImageUpdate vendor.img vendor.transfer.list vendor.new.dat vendor.patch.dat
+
+System_Ext (if exists)
+./BlockImageUpdate system_ext.img system_ext.transfer.list system_ext.new.dat system_ext.patch.dat
+
+
+And thats it!
+
