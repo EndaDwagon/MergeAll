@@ -1,11 +1,18 @@
 # Samsung firmware merge tools
 
-### this is still very much in it's early stages so if you encounter any bugs let me know
+### This script is currently in it's early stages.
+
+### This only works for the S24x and earlier (for now)
 
 # Usage for MergeAll.sh
 
-`./MergeAll.sh [path to base firmware ZIP] [path to update bin]`
+```bash
+./MergeAll.sh [path to base firmware ZIP] [path to update bin]
+```
 
 Command to cleanup EVERYTHING if something has failed, or if you want to merge for another device
 
-`./MergeAll.sh cleanup`
+```bash
+./MergeAll.sh cleanup
+```
+

@@ -4,7 +4,7 @@ if [ "$1" == "cleanup" ]; then
     echo "Running cleanup..."
     
     # Nuke work dirs
-    rm -rf _extracted _base_extracted _update_bin extracted
+    rm -rf _extracted _base_extracted _update_bin extracted cache
 
     # Nuke update-related files
     CLEANUP_FILES=(
@@ -168,8 +168,6 @@ echo
 echo "Merging vendor..."
 ./BlockImageUpdate vendor.img vendor.transfer.list vendor.new.dat vendor.patch.dat
 echo "Vendor merge complete!"
-echo
-echo "DO NOT PANIC IF YOU SEE ANY ERRORS PAST THIS POINT, YOUR DEVICE PROBABLY DOESNT HAVE THESE PARTITIONS"
 
 # System_dlkm merge
 if [ -f system_dlkm.img ]; then
@@ -206,7 +204,7 @@ fi
 
 if [ -f optics.img ]; then
     echo
-    echo "Merging system_ext..."
+    echo "Merging optics..."
     ./BlockImageUpdate optics.img optics.transfer.list optics.new.dat optics.patch.dat
     echo "Optics merge complete!"
 else
@@ -241,7 +239,7 @@ echo "ZIP archive created: Merged_Firmware.zip"
 # Cleanup
 echo
 echo "Cleaning Up..."
-rm -rf _extracted _base_extracted _update_bin extracted
+rm -rf _extracted _base_extracted _update_bin extracted cache
 
 # Nuke all the now unused update-related files
 CLEANUP_FILES=(
