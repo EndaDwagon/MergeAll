@@ -73,13 +73,13 @@ if [ -z "$CSC_TAR" ]; then
     exit 1
 fi
 echo "Found AP package: $AP_TAR"
-echo "Found  package: $CSC_TAR"
+echo "Found CSC package: $CSC_TAR"
 
 # Extract optics and prism from csc
 echo
 echo "Extracting optics.img.lz4 and prism.img.lz4 from CSC..."
 mkdir -p _extracted
-tar -xf "$AP_TAR" --no-same-owner -C _extracted optics.img.lz4 prism.img.lz4
+tar -xf "$CSC_TAR" --no-same-owner -C _extracted optics.img.lz4 prism.img.lz4
 
 # Extract super.img.lz4 from AP
 echo
