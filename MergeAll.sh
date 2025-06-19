@@ -148,32 +148,32 @@ echo "Starting Merge..."
 # System merge
 echo
 echo "Merging system..."
-./BlockImageUpdate system.img system.transfer.list system.new.dat system.patch.dat > /dev/null 2>&1; then
+./BlockImageUpdate system.img system.transfer.list system.new.dat system.patch.dat > /dev/null 2>&1
 echo "System merge complete!"
 
 # Product merge
 echo
 echo "Merging product..."
-./BlockImageUpdate product.img product.transfer.list product.new.dat product.patch.dat > /dev/null 2>&1; then
+./BlockImageUpdate product.img product.transfer.list product.new.dat product.patch.dat > /dev/null 2>&1
 echo "Product merge complete!"
 
 # Odm merge
 echo
 echo "Merging odm"
-./BlockImageUpdate odm.img odm.transfer.list odm.new.dat odm.patch.dat > /dev/null 2>&1; then
+./BlockImageUpdate odm.img odm.transfer.list odm.new.dat odm.patch.dat > /dev/null 2>&1
 echo "Odm merge complete!"
 
 # Vendor merge
 echo
 echo "Merging vendor..."
-./BlockImageUpdate vendor.img vendor.transfer.list vendor.new.dat vendor.patch.dat > /dev/null 2>&1; then
+./BlockImageUpdate vendor.img vendor.transfer.list vendor.new.dat vendor.patch.dat > /dev/null 2>&1
 echo "Vendor merge complete!"
 
 # System_dlkm merge
 if [ -f system_dlkm.img ]; then
     echo
     echo "Merging system_dlkm..."
-    ./BlockImageUpdate system_dlkm.img system_dlkm.transfer.list system_dlkm.new.dat system_dlkm.patch.dat > /dev/null 2>&1; then
+    ./BlockImageUpdate system_dlkm.img system_dlkm.transfer.list system_dlkm.new.dat system_dlkm.patch.dat > /dev/null 2>&1
     echo "System_dlkm merge complete!"
 else
     echo
@@ -184,7 +184,7 @@ fi
 if [ -f vendor_dlkm.img ]; then
     echo
     echo "Merging vendor_dlkm..."
-    ./BlockImageUpdate vendor_dlkm.img vendor_dlkm.transfer.list vendor_dlkm.new.dat vendor_dlkm.patch.dat > /dev/null 2>&1; then
+    ./BlockImageUpdate vendor_dlkm.img vendor_dlkm.transfer.list vendor_dlkm.new.dat vendor_dlkm.patch.dat > /dev/null 2>&1
     echo "Vendor_dlkm merge complete!"
 else
     echo
@@ -195,7 +195,7 @@ fi
 if [ -f system_ext.img ]; then
     echo
     echo "Merging system_ext..."
-    ./BlockImageUpdate system_ext.img system_ext.transfer.list system_ext.new.dat system_ext.patch.dat > /dev/null 2>&1; then
+    ./BlockImageUpdate system_ext.img system_ext.transfer.list system_ext.new.dat system_ext.patch.dat > /dev/null 2>&1
     echo "System_ext merge complete!"
 else
     echo
@@ -205,7 +205,7 @@ fi
 if [ -f optics.img ]; then
     echo
     echo "Merging optics..."
-    ./BlockImageUpdate optics.img optics.transfer.list optics.new.dat optics.patch.dat > /dev/null 2>&1; then
+    ./BlockImageUpdate optics.img optics.transfer.list optics.new.dat optics.patch.dat > /dev/null 2>&1
     echo "Optics merge complete!"
 else
     echo
@@ -215,7 +215,7 @@ fi
 if [ -f prism.img ]; then
     echo
     echo "Merging prism..."
-    ./BlockImageUpdate prism.img prism.transfer.list prism.new.dat prism.patch.dat > /dev/null 2>&1; then
+    ./BlockImageUpdate prism.img prism.transfer.list prism.new.dat prism.patch.dat > /dev/null 2>&1
     echo "Prism merge complete!"
 else
     echo
