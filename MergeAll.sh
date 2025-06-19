@@ -232,7 +232,7 @@ for img in "${MERGED_IMGS[@]}"; do
     fi
 done
 cd output
-zip -r9 ../Merged_Firmware.zip ./*.img >/dev/null
+zip -r0 ../Merged_Firmware.zip ./*.img >/dev/null
 cd ..
 echo "ZIP archive created: Merged_Firmware.zip"
 
