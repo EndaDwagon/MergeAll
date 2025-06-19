@@ -4,7 +4,7 @@ if [ "$1" == "cleanup" ]; then
     echo "Running cleanup..."
     
     # Nuke work dirs
-    rm -rf _extracted _base_extracted _update_bin extracted cache
+    rm -rf _extracted _base_extracted _update_bin extracted cache output
 
     # Nuke update-related files
     CLEANUP_FILES=(
@@ -19,7 +19,7 @@ if [ "$1" == "cleanup" ]; then
         vendor.img vendor_dlkm.img product.img odm.img Progress.txt
         optics.transfer.list optics.new.dat optics.patch.dat
         prism.transfer.list prism.new.dat prism.patch.dat
-        prism.img optics.img
+        prism.img optics.img Merged_Firmware.zip
     )
 
     for file in "${CLEANUP_FILES[@]}"; do
